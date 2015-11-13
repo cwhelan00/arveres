@@ -2,8 +2,8 @@
  * @module arveres/doa/keyword
  */
 
-var db = require('../db').db;
-var ObjectId = require('mongoose').Schema.Types.ObjectId;
+var Database = require('../db');
+var ObjectId = require('mongoose').mongo.ObjectID;
 
 var Keyword = {
   create: create,
@@ -22,9 +22,7 @@ function create(keyword, cb) {
     keyword: keyword
   };
 
-  db
-    .insert('keywords', entry)
-    .exec(cb);
+  Database.db.insert('keywords', entry, cb);
 }
 
 /**
@@ -33,7 +31,7 @@ function create(keyword, cb) {
  * @param {function} cb
  */
 function findById(id, cb) {
-  db
+  Database.db
     .select('keywords')
     .where('id = ' + id)
     .exec(cb);
@@ -45,7 +43,7 @@ function findById(id, cb) {
  * @param {function} cb
  */
 function findByKeyword(word, cb) {
-  db
+  Database.db
     .select('keywords')
     .where('keyword = ' + word)
     .exec(cb);

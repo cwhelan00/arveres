@@ -10,9 +10,7 @@ var sinonChai = require('sinon-chai');
 chai.use(sinonChai);
 
 var db = {
-  insert: function() {
-    return this;
-  },
+  insert: function() {},
 
   select: function() {
     return this;
@@ -37,7 +35,6 @@ describe('Keyword', function() {
 
     before(function() {
       sandbox = sinon.sandbox.create();
-      sandbox.spy(db, 'insert');
     });
 
     after(function() {
@@ -49,26 +46,26 @@ describe('Keyword', function() {
     });
 
     it('should insert a new row into keywords', function(done) {
-      var e = sandbox.stub(db, 'exec', function(cb) {
+      var i = sandbox.stub(db, 'insert', function(table, entry, cb) {
         cb();
       });
 
       Keyword.create('word', function() {
         expect(db.insert).to.have.been.calledWith('keywords');
-        e.restore();
+        i.restore();
         done();
       });
     });
 
     it('should pass back an error if insertion fails', function(done) {
-      var e = sandbox.stub(db, 'exec', function(cb) {
+      var i = sandbox.stub(db, 'insert', function(table, entry, cb) {
         cb(new Error('error'));
       });
 
       Keyword.create('word', function(err) {
         expect(err).to.be.ok;
         expect(err.message).to.equal('error');
-        e.restore();
+        i.restore();
         done();
       });
     });
