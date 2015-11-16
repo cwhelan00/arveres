@@ -1,0 +1,48 @@
+{
+  "name": "arveres",
+  "version": "0.0.0",
+  "description": "Online Auction Site",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node ./bin/start.js",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha test/** --recursive",
+    "coverage": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/arveres/arveres.git"
+  },
+  "keywords": [
+    "auction",
+    "online auction"
+  ],
+  "contributors": [
+    {"name": "Chris Whelan"},
+    {"name": "Justin Collins"},
+    {"name": "Ben Watson"},
+    {"name": "Patricio Vargas"}
+  ],
+  "bugs": {
+    "url": "https://gitlab.com/arveres/arveres/issues"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "istanbul": "^0.3.5",
+    "mocha": "^2.1.0",
+    "proxyquire": "^1.7.3",
+    "sinon": "^1.12.2",
+    "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "connect-flash": "^0.1.1",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.11.3",
+    "passport": "^0.3.0",
+    "passport-google": "^0.3.0",
+    "sheetsdb": "0.0.0"
+  }
+}
