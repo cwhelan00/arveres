@@ -2,6 +2,8 @@
  * @module arveres/doa/keyword
  */
 
+'use strict';
+
 var Database = require('../db');
 var ObjectId = require('mongoose').mongo.ObjectID;
 
