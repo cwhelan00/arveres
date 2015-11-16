@@ -8,27 +8,22 @@ var proxyquire = require('proxyquire');
 var sinonChai = require('sinon-chai');
 chai.use(sinonChai);
 
-var Server;
-var http;
-
 var server = {
   listen: sinon.spy(),
   close: sinon.spy()
 };
 
+var http = {
+  createServer: function() {
+    return server;
+  }
+};
+
+var Server = proxyquire('../../server', {
+  'http': http
+});
+
 describe('Server', function() {
-  before(function() {
-    http = {
-      createServer: function() {
-        return server;
-      }
-    };
-
-    Server = proxyquire('../../server', {
-      'http': http
-    });
-  });
-
   describe('.listen', function() {
     afterEach(function() {
       server.listen.reset();

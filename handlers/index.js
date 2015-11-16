@@ -14,7 +14,7 @@ var IndexHandler = {
  * @param {object} res
  */
 function getIndex(req, res) {
-  res.render('index.html', {title: 'Express'})
+  res.render('index', {title: 'Express'})
 }
 
 module.exports = IndexHandler;

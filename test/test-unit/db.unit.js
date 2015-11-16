@@ -9,20 +9,15 @@ var proxyquire = require('proxyquire');
 var sinonChai = require('sinon-chai');
 chai.use(sinonChai);
 
-var Database;
-var sheetsdb;
+var sheetsdb = {
+  connect: sinon.stub()
+};
+
+var Database = proxyquire('../../db', {
+  'sheetsdb': sheetsdb
+});
 
 describe('Database', function() {
-  before(function() {
-    sheetsdb = {
-      connect: sinon.stub()
-    };
-
-    Database = proxyquire('../../db', {
-      'sheetsdb': sheetsdb
-    });
-  });
-
   describe('.connect', function() {
     afterEach(function() {
       delete Database.db;
