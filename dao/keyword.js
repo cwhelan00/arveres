@@ -6,6 +6,9 @@
 
 var Database = require('../db');
 var ObjectId = require('mongoose').mongo.ObjectID;
+//var Auction = require('./auction');
+
+var async = require('async');
 
 var Keyword = {
   create: create,
@@ -50,5 +53,23 @@ function findByKeyword(word, cb) {
     .where('keyword = ' + word)
     .exec(cb);
 }
+
+///**
+// * Finds keyword rows by auction
+// * @param {string} auctionId
+// * @param {function} cb
+// */
+//function findByAuction(auctionId, cb) {
+//  Database.db
+//    .select('hasKeyword')
+//    .where('auctionId = ' + auctionId)
+//    .exec(function(err, rows) {
+//      if(err) {
+//        return cb(err);
+//      }
+//
+//      async.map(rows, Auction.findById, cb);
+//    });
+//}
 
 module.exports = Keyword;
