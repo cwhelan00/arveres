@@ -44,12 +44,13 @@
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
+    "async": "^1.5.0",
     "body-parser": "^1.14.1",
     "connect-flash": "^0.1.1",
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
     "express-session": "^1.11.3",
-    "mongoose": "^4.2.5",
+    "mongoose": "^4.2.6",
     "passport": "^0.3.0",
     "passport-google": "^0.3.0",
     "sheetsdb": "0.0.0"
