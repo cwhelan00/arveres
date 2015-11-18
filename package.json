@@ -19,10 +19,18 @@
     "online auction"
   ],
   "contributors": [
-    {"name": "Chris Whelan"},
-    {"name": "Justin Collins"},
-    {"name": "Ben Watson"},
-    {"name": "Patricio Vargas"}
+    {
+      "name": "Chris Whelan"
+    },
+    {
+      "name": "Justin Collins"
+    },
+    {
+      "name": "Ben Watson"
+    },
+    {
+      "name": "Patricio Vargas"
+    }
   ],
   "bugs": {
     "url": "https://gitlab.com/arveres/arveres/issues"
@@ -36,6 +44,7 @@
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
+    "async": "^1.5.0",
     "body-parser": "^1.14.1",
     "connect-flash": "^0.1.1",
     "express": "^4.13.3",
