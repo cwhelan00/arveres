@@ -7,6 +7,11 @@
 var Database = require('../db');
 var ObjectId = require('mongoose').mongo.ObjectID;
 
+var async = require('async');
+
+//var User = require('./user');
+//var Item = require('./item');
+
 var Win = {
   create: create,
   findById: findById,
@@ -80,5 +85,24 @@ function findBySeller(sellerId, cb) {
     .where('sellerId = ' + sellerId)
     .exec(cb);
 }
+
+///**
+// * Populates wins with hold appropriate relations
+// * @param {object} err
+// * @param {array} rows
+// */
+//function populate(cb, err, rows) {
+//  if(err) {
+//    return cb(err);
+//  }
+//
+//  async.map(rows, function(row, done) {
+//    async.series({
+//      winnerId: User.findById.bind(User, row.attr.winnerId),
+//      sellerId: User.findById.bind(User, row.attr.sellerId),
+//      itemId: Item.findById.bind(Item, row.attr.itemId)
+//    }, done);
+//  }, cb);
+//}
 
 module.exports = Win;
