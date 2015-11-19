@@ -1,5 +1,5 @@
 /**
- * @module arveres/handlers/index
+ * @module arveres/handlers/user
  */
 
 'use strict';

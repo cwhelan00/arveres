@@ -1,5 +1,5 @@
 /**
- * @module arveres/routes/auctions
+ * @module arveres/routes/post
  */
 
 'use strict';
