@@ -22,12 +22,12 @@ var ErrorHandler = require('./handlers/error');
 var IndexHandler = require('./handlers/index');
 var AuctionsHandler = require('./handlers/auctions');
 var UserHandler = require('./handlers/user');
-var PostHandler = require('./handlers/post');
+
 // routers
 var indexRouter = require('./routes/index')(IndexHandler);
 var auctionsRouter = require('./routes/auctions')(AuctionsHandler);
 var userRouter = require('./routes/user')(UserHandler);
-var postRouter = require('./routes/post')(PostHandler);
+
 var app = express();
 
 // set view engine
@@ -59,7 +59,7 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/auctions', auctionsRouter);//auctions
 app.use('/user', userRouter);
-app.use('/auctions', postRouter);
+
 // set error handlers
 app.use(ErrorHandler.pageNotFound);
 app.use(ErrorHandler.handlePageError);
