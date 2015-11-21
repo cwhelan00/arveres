@@ -1,5 +1,5 @@
 /**
- * @module arveres/doa/keyword
+ * @module arveres/dao/keyword
  */
 
 'use strict';
