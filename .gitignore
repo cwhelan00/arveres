@@ -6,3 +6,6 @@ coverage/
 
 # Swap #
 *.swp
+
+# debug log #
+npm-debug.log
