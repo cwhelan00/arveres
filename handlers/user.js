@@ -4,6 +4,7 @@
 
 'use strict';
 
+var urlConfig = require('../config/url');
 
 var UserHandler = {
   getUser: getUser
@@ -15,7 +16,10 @@ var UserHandler = {
  * @param {object} res
  */
 function getUser(req, res) {
-  res.render('user/profile', {title: 'Arveres'});
-}                                
+  res.render('user/profile', {
+    title: 'Arveres',
+    url: urlConfig
+  });
+}
 
 module.exports = UserHandler;

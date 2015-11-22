@@ -3,10 +3,12 @@
  */
 
 'use strict';
+
 var urlConfig = require('../config/url');
 
 var AuctionsHandler = {
-  getAuctions: getAuctions
+  getAuctions: getAuctions,
+  getCreateAuction: getCreateAuction
 }
 
 /**
@@ -15,8 +17,10 @@ var AuctionsHandler = {
  * @param {object} res
  */
 function getAuctions(req, res) {
-  res.render('auctions/search', {title: 'Arveres'});
-                                // url: urlConfig });
+  res.render('auctions/search', {
+    title: 'Arveres',
+    url: urlConfig
+  });
 }
 /*
 /**
@@ -24,11 +28,13 @@ function getAuctions(req, res) {
  * @param {object} req
  * @param {object} res
  */
-/*function getCreateAuction(req,res) {//make saved as create the page
-  res.render('auction/create',{title: 'Arveres',
-                               url: urlConfig });
+function getCreateAuction(req,res) {//make saved as create the page
+  res.render('auctions/create',{
+    title: 'Arveres',
+    url: urlConfig
+  });
 }
-*/
+
 /**
  * Create Auction
  * @param {object} req
@@ -36,7 +42,7 @@ function getAuctions(req, res) {
  */
 //function postCreateAuction(req,res) {
  //we want to console.log all of the passed in attributes by that he meant the names
- //item name description category and starting amount 
+ //item name description category and starting amount
 //}
 
 module.exports = AuctionsHandler;
