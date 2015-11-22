@@ -4,6 +4,8 @@
 
 'use strict';
 
+var urlConfig = require('../config/url');
+
 var UserHandler = {
   getUser: getUser
 }
