@@ -110,26 +110,23 @@
                 </ul>
                 <div class='col-lg-9'>
                     <form action='{{url.host}}{{url.auctions.search}}' method='GET'>
-                    <div id="searchbox" class="input-group">
-                        
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-btn">                        
-                            <button class="btn"><span class=" glyphicon glyphicon-search "></span></button> 
-                        
-                             <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>   
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                  <li><a href="#">Audio</a></li>
-                                  <li><a href="#">Antiques</a></li>
-                                  <li><a href="#">Art</a></li>
-                                  <li><a href="#">Cameras & Photo</a></li>
-                                  <li><a href="#">Cellphone & Accesories</a></li>
-                                  <li><a href="#">Cars</a></li>
-                                  <li><a href="#">Jewerly & Watches</a></li>
-                                  <li><a href="#">Music</a></li>
-                                </ul>
-                            </span>
-                        
-                    </div>
+                        <div id="searchbox" class="input-group">                            
+                                <input type="text" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">                        
+                                    <button class="btn"><span class=" glyphicon glyphicon-search "></span></button>                                
+                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>   
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#">Audio</a></li>
+                                        <li><a href="#">Antiques</a></li>
+                                        <li><a href="#">Art</a></li>
+                                        <li><a href="#">Cameras & Photo</a></li>
+                                        <li><a href="#">Cellphone & Accesories</a></li>
+                                        <li><a href="#">Cars</a></li>
+                                        <li><a href="#">Jewerly & Watches</a></li>
+                                        <li><a href="#">Music</a></li>
+                                        </ul>
+                                </span>                            
+                        </div>
                     </form>
                 </div>
             </div>
@@ -181,8 +178,16 @@
                 $(".newOverlay").toggle();
                 $(".aView").show()
             });
+            $(".deleteView").click(function(){
+                $(".deleteItem").toggle();
+                $(".aView").show()
+            });
             $('.closeView').click(function(){
                 $(".newOverlay").toggle();
+                $(".aView").hide()
+            });
+             $('.closeViewx').click(function(){
+                $(".deleteItem").toggle();
                 $(".aView").hide()
             });
             

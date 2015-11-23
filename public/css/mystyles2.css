@@ -218,3 +218,41 @@ body{
                 display: inline;
                 cursor: pointer;
         }
+        .status{
+            color: green;
+        }
+        .myAuctions{
+          color: white;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 250%;
+          height: 250%;
+          z-index: 10;
+          background-color: rgba(67,67,67,0.9); /*dim the background*/
+          display: none;
+        }
+        .deleteItem{
+          color: white;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 250%;
+          height: 250%;
+          z-index: 10;
+          background-color: rgba(67,67,67,0.9); /*dim the background*/
+          display: none;
+        }
+        .confirmation{
+                margin-left: 32%;
+        }
+        .no{
+              margin-left: 5%   
+        }
+        .closeViewx{
+            color: white;
+            font-size: 2em;
+            margin-top: 2%;
+            left: 45%;
+            cursor: pointer;
+        }

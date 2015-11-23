@@ -7,7 +7,9 @@
 var urlConfig = require('../config/url');
 
 var UserHandler = {
-  getUser: getUser
+  getUser: getUser,
+  getMyAuctions: getMyAuctions,
+  getSubs: getSubs
 }
 
 /**
@@ -21,5 +23,18 @@ function getUser(req, res) {
     url: urlConfig
   });
 }
+function getMyAuctions(req, res) {
+  res.render('user/myauctions', {
+    title: 'Arveres',
+    url: urlConfig
+  });
+}
+function getSubs(req, res) {
+  res.render('user/subs', {
+    title: 'Arveres',
+    url: urlConfig
+  });
+}
 
 module.exports = UserHandler;
+
