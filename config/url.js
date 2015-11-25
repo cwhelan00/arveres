@@ -3,11 +3,13 @@ module.exports = {
   index: '',
 
   auctions: {
-    search:'auctions/search'
+    search:'auctions/search',
+    create:'auctions/create'
   },
 
   user:{
     profile:'user/profile'
-  }
+  }  
+  
 };
 
