@@ -105,8 +105,9 @@ describe('Keyword', function() {
         cb();
       });
 
-      Keyword.findById(0, function() {
-        expect(db.where).to.have.been.calledWith('id = 0');
+      Keyword.findById('id', function() {
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].id).to.equal('id');
         e.restore();
         done();
       });
@@ -117,7 +118,7 @@ describe('Keyword', function() {
         cb(new Error('error'));
       });
 
-      Keyword.findById(0, function(err) {
+      Keyword.findById('id', function(err) {
         expect(err).to.be.ok;
         expect(err.message).to.equal('error');
         e.restore();
@@ -161,7 +162,8 @@ describe('Keyword', function() {
       });
 
       Keyword.findByKeyword('word', function() {
-        expect(db.where).to.have.been.calledWith('keyword = word');
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].word).to.equal('word');
         e.restore();
         done();
       });
