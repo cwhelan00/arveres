@@ -46,7 +46,7 @@ function create(winnerId, sellerId, itemId, cb) {
 function findById(id, cb) {
   Database.db
     .select('wins')
-    .where('id = ' + id)
+    .where({id: id})
     .exec(cb);
 }
 
@@ -58,7 +58,7 @@ function findById(id, cb) {
 function findByItem(itemId, cb) {
   Database.db
     .select('wins')
-    .where('itemId = ' + itemId)
+    .where({itemId: itemId})
     .exec(cb);
 }
 
@@ -70,7 +70,7 @@ function findByItem(itemId, cb) {
 function findByWinner(winnerId, cb) {
   Database.db
     .select('wins')
-    .where('winnerId = ' + winnerId)
+    .where({winnerId: winnerId})
     .exec(cb);
 }
 
@@ -82,7 +82,7 @@ function findByWinner(winnerId, cb) {
 function findBySeller(sellerId, cb) {
   Database.db
     .select('wins')
-    .where('sellerId = ' + sellerId)
+    .where({sellerId: sellerId})
     .exec(cb);
 }
 
@@ -98,9 +98,9 @@ function findBySeller(sellerId, cb) {
 //
 //  async.map(rows, function(row, done) {
 //    async.series({
-//      winnerId: User.findById.bind(User, row.attr.winnerId),
-//      sellerId: User.findById.bind(User, row.attr.sellerId),
-//      itemId: Item.findById.bind(Item, row.attr.itemId)
+//      winnerId: User.findById.bind(User, row.get('winnerId')),
+//      sellerId: User.findById.bind(User, row.get('sellerId')),
+//      itemId: Item.findById.bind(Item, row.get('itemId'))
 //    }, done);
 //  }, cb);
 //}
