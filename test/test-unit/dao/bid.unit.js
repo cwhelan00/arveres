@@ -114,7 +114,8 @@ describe('Bid', function() {
       });
 
       Bid.findById('id', function() {
-        expect(db.where).to.have.been.calledWith('id = id');
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].id).to.equal('id');
         e.restore();
         done();
       });
@@ -169,7 +170,8 @@ describe('Bid', function() {
       });
 
       Bid.findByItem('itemId', function() {
-        expect(db.where).to.have.been.calledWith('itemId = itemId');
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].itemId).to.equal('itemId');
         e.restore();
         done();
       });
@@ -226,7 +228,8 @@ describe('Bid', function() {
       });
 
       Bid.findTopByItem('itemId', function() {
-        expect(db.where).to.have.been.calledWith('itemId = itemId');
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].itemId).to.equal('itemId');
         e.restore();
         done();
       });
@@ -317,7 +320,8 @@ describe('Bid', function() {
       });
 
       Bid.findByUser('userId', function() {
-        expect(db.where).to.have.been.calledWith('userId = userId');
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].userId).to.equal('userId');
         e.restore();
         done();
       });
