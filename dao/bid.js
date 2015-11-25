@@ -43,7 +43,7 @@ function create(userId, itemId, amount, cb) {
 function findById(id, cb) {
   Database.db
     .select('bids')
-    .where('id = ' + id)
+    .where({id: id})
     .exec(cb);
 }
 
@@ -55,7 +55,7 @@ function findById(id, cb) {
 function findByItem(itemId, cb) {
   Database.db
     .select('bids')
-    .where('itemId = ' + itemId)
+    .where({itemId: itemId})
     .exec(cb);
 }
 
@@ -72,7 +72,7 @@ function findTopByItem(itemId, limit, cb) {
 
   Database.db
     .select('bids')
-    .where('itemId = ' + itemId)
+    .where({itemId: itemId})
     .orderBy('date')
     .limit(limit)
     .exec(cb);
@@ -86,7 +86,7 @@ function findTopByItem(itemId, limit, cb) {
 function findByUser(userId, cb) {
   Database.db
     .select('bids')
-    .where('userId = ' + userId)
+    .where({userId: userId})
     .exec(cb);
 }
 
