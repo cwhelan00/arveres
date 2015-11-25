@@ -106,7 +106,8 @@ describe('Win', function() {
       });
 
       Win.findById('id', function() {
-        expect(db.where).to.have.been.calledWith('id = id');
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].id).to.equal('id');
         e.restore();
         done();
       });
@@ -161,7 +162,8 @@ describe('Win', function() {
       });
 
       Win.findByItem('itemId', function() {
-        expect(db.where).to.have.been.calledWith('itemId = itemId');
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].itemId).to.equal('itemId');
         e.restore();
         done();
       });
@@ -216,7 +218,8 @@ describe('Win', function() {
       });
 
       Win.findByWinner('winnerId', function() {
-        expect(db.where).to.have.been.calledWith('winnerId = winnerId');
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].winnerId).to.equal('winnerId');
         e.restore();
         done();
       });
@@ -271,7 +274,8 @@ describe('Win', function() {
       });
 
       Win.findBySeller('sellerId', function() {
-        expect(db.where).to.have.been.calledWith('sellerId = sellerId');
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].sellerId).to.equal('sellerId');
         e.restore();
         done();
       });
