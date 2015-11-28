@@ -38,7 +38,7 @@ function create(keyword, cb) {
 function findById(id, cb) {
   Database.db
     .select('keywords')
-    .where('id = ' + id)
+    .where({id: id})
     .exec(cb);
 }
 
@@ -50,7 +50,7 @@ function findById(id, cb) {
 function findByKeyword(word, cb) {
   Database.db
     .select('keywords')
-    .where('keyword = ' + word)
+    .where({word: word})
     .exec(cb);
 }
 
@@ -62,11 +62,15 @@ function findByKeyword(word, cb) {
 //function findByAuction(auctionId, cb) {
 //  Database.db
 //    .select('hasKeyword')
-//    .where('auctionId = ' + auctionId)
+//    .where(auctionId: auctionId)
 //    .exec(function(err, rows) {
 //      if(err) {
 //        return cb(err);
 //      }
+//
+//      rows = rows.map(function(row) {
+//        return row.get('auctionId');
+//      });
 //
 //      async.map(rows, Auction.findById, cb);
 //    });
