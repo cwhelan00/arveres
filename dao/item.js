@@ -41,7 +41,7 @@ function create(title, image, description, cb){
  */
 function findById(id, cb){
   Database.db.select('items')
-    .where('id = ' + id)
+    .where({id: id})
     .exec(cb);
 }
 
@@ -53,7 +53,7 @@ function findById(id, cb){
  */
 function findByTitle(title, cb){
   Database.db.select('items')
-    .where('title = ' + title)
+    .where({title: title})
     .exec(cb);
 }
 
