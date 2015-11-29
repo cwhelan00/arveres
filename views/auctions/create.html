@@ -11,8 +11,9 @@
                         </div></a>
                     </div>
                     <br>
-                     <input type="file" id="exampleInputFile">
+                     
                 </div>
+                <form method="POST" action="{{url.host}}{{url.auctions.create}}"> 
                 <div class='col-lg-6'>
                     <select name="itemCategory" class="form-control">
                       <option val="0">Category</option>
@@ -28,7 +29,7 @@
                       <option val="10">Music</option>
                     </select>
                     <br>
-                    <input type="text" class="form-control" name="itemName" placeholder="Item Name">
+                   <input type="text" class="form-control" name="itemName" placeholder="Item Name">
                     <br>
                     <textarea class="form-control" rows="3" name="descriptionItem" placeholder="Item Description"></textarea>
                     <br>
@@ -41,11 +42,10 @@
                     </div>
                     
                 </div>
-                <div class='col-lg-2'>
-                    
-                    
+                <div class='col-lg-2'>  
                     <button id="post" class="btn bidView" ><strong><center>&nbsp&nbsp&nbspPOST&nbsp&nbsp&nbsp</center></strong></button>
                 </div>
+                </form>
             </div>
         <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
         <hr>

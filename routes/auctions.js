@@ -16,8 +16,7 @@ function getAuctionsRouter(auctionsHandler) {
 
   router.get('/search', auctionsHandler.getAuctions);
   router.get('/create', auctionsHandler.getCreateAuction);
-
-  //router.post('/create', auctionsHandler.postCreateAuction);
+  router.post('/create', auctionsHandler.postCreateAuction);
 
 
   return router;
