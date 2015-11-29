@@ -24,7 +24,7 @@ var Item = {
  */
 function create(title, image, description, cb){
   var item = {
-    id: new ObjectID().toString();
+    id: new ObjectID().toString(),
     title: title,
     image: image,
     description: description

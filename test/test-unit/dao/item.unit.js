@@ -48,14 +48,14 @@ describe('Item', function(){
       });
 
       Item.create('test_title', 'test.png', 'test_description', function(){
-        expect(db.insert).to.have.been.calledWith('test_title', 'test.png', 'test_description');
+        expect(db.insert).to.have.been.calledWith('items');
         i.restore();
         done();
       });
     });
 
-    it('should pass back an error if insertion fails'. function(done){
-      var i = sandbox.stub(db, 'insert', function(){
+    it('should pass back an error if insertion fails', function(done){
+      var i = sandbox.stub(db, 'insert', function(table, entry, cb){
         cb(new Error('error'));
       });
 
@@ -73,8 +73,8 @@ describe('Item', function(){
 
     before(function(){
       sandbox = sinon.sandbox.create();
-      sandbox.spy(db.where);
-      sandbox.spy(db.select);
+      sandbox.spy(db, 'where');
+      sandbox.spy(db, 'select');
     });
 
     after(function(){
@@ -98,19 +98,20 @@ describe('Item', function(){
     });
 
     it('should select only specified ids', function(done){
-      var e = sandbox.stub(db, 'exec', function(id, cb){
+      var e = sandbox.stub(db, 'exec', function(cb){
         cb();
       });
 
       Item.findById('0', function(){
-        expect(db.where).to.have.been.calledWith({id: '0'});
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].id).to.equal('0');
         e.restore();
         done();
       });
     });
 
     it('should pass back an error if selection fails', function(done){
-      var e = sandbox.stub(db, 'exec', function(){
+      var e = sandbox.stub(db, 'exec', function(cb){
         cb(new Error('error'));
       });
 
@@ -124,6 +125,22 @@ describe('Item', function(){
   });
 
   describe('.findByTitle', function(){
+    var sandbox;
+
+    before(function(){
+      sandbox = sinon.sandbox.create();
+      sandbox.spy(db, 'select');
+      sandbox.spy(db, 'where');
+    });
+
+    after(function(){
+      sandbox.restore();
+    });
+
+    afterEach(function(){
+      sandbox.reset();
+    });
+
     it('should select from items', function(done){
       var e = sandbox.stub(db, 'exec', function(cb){
         cb();
@@ -141,8 +158,9 @@ describe('Item', function(){
         cb();
       });
 
-      Items.findByTitle('test', function(){
-        expect(db.where).to.have.been.calledWith({title: 'test'});
+      Item.findByTitle('test', function(){
+        expect(db.where).to.have.been.called;
+        expect(db.where.args[0][0].title).to.equal('test');
         e.restore();
         done();
       });
@@ -153,7 +171,7 @@ describe('Item', function(){
         cb(new Error('error'));
       });
 
-      Items.findByTitle('test', function(err){
+      Item.findByTitle('test', function(err){
         expect(err).to.be.ok;
         expect(err.message).to.equal('error');
         e.restore();
