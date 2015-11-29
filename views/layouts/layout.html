@@ -1,9 +1,233 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
-  </head>
-  <body>
-    {{{body}}}
-  </body>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Arveres</title>
+
+    <!-- Bootstrap Core CSS -->
+   
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./styles/ihover.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/mystyles.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/mystyles2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+  
+    <!-- Custom CSS -->
+    <link href="./css/heroic-features.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./imgs/ar.png">
+    
+   <script src="./js/myscripts.js"></script>
+</head>
+	<body>
+ 
+    <div id="overlay">
+        <div id="mylogin">
+           <div id="youlogin">
+                <div class='container'>
+                    <div class='col-lg-5'>
+                        <center><img class="lit" src="./imgs/ar.png"></center>
+                        <br>
+                        <input id="username" type="text" class="form-control texto" placeholder="Username" aria-describedby="basic-addon1"><br><br>
+                        <input id="password" type="password" class="form-control texto" placeholder="Password" aria-describedby="basic-addon1"><br><br>
+                        <center><button id="ok" class="btn btn" ><strong>Log in</strong></button>
+                        <button id="cancel" class="btn btn"><strong>Cancel</strong></button></center>
+                    </div>
+                </div>
+           </div>
+       </div>
+    </div>
+      
+    <div id="fixer" class="Fixed">
+        <div class='login'>
+           <a id="lefter" class="btn btn-primary btn-lg" role="button" data-toggle="tooltip" data-placement="left"><img src="./imgs/ar.png"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            
+        </div>
+    </div>
+    <div class="topper">
+        <div class="container">
+            <div id="upnav">
+                <ul>
+                    <li class="login">
+                        <a style="color:white" href="#">Sign in |</a>
+                    </li>
+                    <li class="login">
+                        <a  style="color:white" href="#">My Account |</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container prefondo">
+    <br>
+    <div class="container">
+        <div class='col-lg-4'></div>
+        <div class='col-lg-4'>
+            <div id="arveres" class="ih-item square effect4"><a href='{{url.host}}{{url.index}}'>
+                <div class="img"><img class = 'img-responsive' src="./imgs/arveres.png"></div>
+                    <div class="info">
+                        <h3>ar·ve·res</h3>
+                            <p id="def">
+                                 noun 1.
+                                a public sale in which goods or property are sold to the highest bidder.
+                                "the books are expected to fetch a six-figure sum at tomorrow's auction"</p>
+                    </div></a>
+                </div>
+          </div>
+        <div class='col-lg-4'></div>
+    </div>
+    <nav class="navbar navbar-inverse " role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ul>
+                <div class='col-lg-9'>
+                    <form action='{{url.host}}{{url.auctions.search}}' method='GET'>
+                    <div id="searchbox" class="input-group">
+                        
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">                        
+                            <button class="btn"><span class=" glyphicon glyphicon-search "></span></button> 
+                        
+                             <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>   
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                  <li><a href="#">Audio</a></li>
+                                  <li><a href="#">Antiques</a></li>
+                                  <li><a href="#">Art</a></li>
+                                  <li><a href="#">Cameras & Photo</a></li>
+                                  <li><a href="#">Cellphone & Accesories</a></li>
+                                  <li><a href="#">Cars</a></li>
+                                  <li><a href="#">Jewerly & Watches</a></li>
+                                  <li><a href="#">Music</a></li>
+                                </ul>
+                            </span>
+                        
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        
+        <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="scroll-top-wrapper ">
+	<span class="scroll-top-inner">
+		<i class="fa fa-2x fa-arrow-circle-up"></i>
+	</span>
+</div>
+		{{{ body }}}
+        
+         <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Arveres 2015</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+  
+    <!-- jQuery -->
+    <script src="./js/jquery.js">
+    </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+             $("#mylogin").hide()
+            $("#cancel").click(function(){
+                $("#mylogin").hide();
+                $("#overlay").hide();
+            });
+            
+            $(".login").click(function(){
+                $("#overlay").toggle();
+                $("#mylogin").toggle()
+            });
+             $(".bidView").click(function(){
+                $(".newOverlay").toggle();
+                $(".aView").show()
+            });
+            $('.closeView').click(function(){
+                $(".newOverlay").toggle();
+                $(".aView").hide()
+            });
+            
+            function startTimer(duration, display) {
+                var timer = duration, minutes, seconds;
+                setInterval(function () {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+            
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+            
+                    display.text(minutes + ":" + seconds);
+            
+                    if (--timer < 0) {
+                        timer = duration;
+                    }
+                }, 1000);
+            }
+            jQuery(function ($) {
+                var fiveMinutes = 60 * 5,
+                    display = $('#time');
+                startTimer(fiveMinutes, display);
+            });
+            $('.pInfoNs').fadeIn('1000');
+            $('.pInfoBs').fadeIn('1500');
+            $('.pInfoTs').fadeIn('2000');
+            $('.pInfoAs').fadeIn('2500');
+            $('.pInfoEs').fadeIn('3000');
+            $('#edit').click(function(){
+                var $this = $(this);
+                $('.editable').toggle();
+                $('inputFile').toggle();
+                $this.toggleClass('.bidView');
+                    if($this.hasClass('.bidView')){
+                        $this.text('CANCEL');
+                        $('#edit').css("font-weight","Bold");
+                    } else {
+                        $this.text('EDIT');
+                        $('#edit').css("font-weight","Bold");
+                    }
+            });
+        });
+    </script>
+    </div>
+    <div class='container fondo'></div>
+	</body>
 </html>
