@@ -44,10 +44,22 @@ RawBlameHistory     4450 lines (4319 sloc)  126 KB
   height: 220px;
   border-radius: 50%;
 }
+.ih-item.circlea {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+}
 .ih-item.circle .img {
   position: relative;
   width: 220px;
   height: 220px;
+  border-radius: 50%;
+}
+.ih-item.circlea .img {
+  position: relative;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
 }
 .ih-item.circle .img:before {
@@ -62,7 +74,22 @@ RawBlameHistory     4450 lines (4319 sloc)  126 KB
   -moz-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
 }
+.ih-item.circlea .img:before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
 .ih-item.circle .img img {
+  border-radius: 50%;
+}
+.ih-item.circlea .img img {
   border-radius: 50%;
 }
 .ih-item.circle .info {
@@ -73,6 +100,17 @@ RawBlameHistory     4450 lines (4319 sloc)  126 KB
   right: 0;
   text-align: center;
   border-radius: 50%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.ih-item.circlea .info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  border-radius:50%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -98,6 +136,17 @@ RawBlameHistory     4450 lines (4319 sloc)  126 KB
 .ih-item.circle.effect1 .spinner {
   width: 230px;
   height: 230px;
+  border: 10px solid #FFF212;
+  border-right-color: black;
+  border-bottom-color: #FFF212;
+  border-radius: 50%;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+.ih-item.circle.effect1A .spinner {
+  width: 130px;
+  height: 130px;
   border: 10px solid #FFF212;
   border-right-color: black;
   border-bottom-color: #FFF212;

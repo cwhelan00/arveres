@@ -6,10 +6,11 @@ module.exports = {
     search:'auctions/search',
     create:'auctions/create'
   },
-
+ 
   user:{
-    profile:'user/profile'
+    profile:'user/profile',
+    myAuctions:'user/myauctions',
+    subs:'user/subs'
   }  
-  
 };
 

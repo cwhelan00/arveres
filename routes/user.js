@@ -15,8 +15,10 @@ function getUserRouter(userHandler) {
   var router = Router();
 
   router.get('/profile', userHandler.getUser);
-
+  router.get('/myauctions', userHandler.getMyAuctions);
+  router.get('/subs', userHandler.getSubs);
   return router;
 }
 
 module.exports = getUserRouter;
+

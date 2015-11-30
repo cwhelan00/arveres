@@ -37,12 +37,19 @@ app.set('view engine', '.html');
 /*app.get('/search/auctions',function(req,res){
 	res.render('auctions');
 });*/
+
 // set basic properties
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/auctions', express.static(path.join(__dirname, 'public')));
 app.use('/user', express.static(path.join(__dirname, 'public')));
+
+app.post('/myform', function(req, res){ 
+    var myText = req.body.itemName; //mytext is the name item of your input box
+    res.send('You sent the name "' + req.body.mytext + '".'); 
+	console.log(myText);
+}); 
 // set passport
 app.use(session({
   secret: 'whysosalty',
